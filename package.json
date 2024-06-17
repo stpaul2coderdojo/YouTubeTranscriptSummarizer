@@ -1,0 +1,14 @@
+{
+  "name": "my-netlify-youtube-summarizer",
+  "version": "1.0.0",
+  "description": "A YouTube summarizer using Netlify Functions",
+  "scripts": {
+    "build": "cp -r public/* dist/"
+  },
+  "dependencies": {
+    "@netlify/functions": "^0.10.0",
+    "rxjs": "^7.0.0",
+    "youtube-transcript-api": "^0.2.0",
+    "transformers": "^4.0.0"
+  }
+}
