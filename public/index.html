@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summarizer</title>
+</head>
+<body>
+  <h1>YouTube Summarizer</h1>
+  <input type="text" id="videoId" placeholder="Enter YouTube Video ID">
+  <button id="summarizeBtn">Summarize</button>
+  <pre id="summary"></pre>
+
+  <script>
+    document.getElementById('summarizeBtn').addEventListener('click', async () => {
+      const videoId = document.getElementById('videoId').value;
+      const response = await fetch(`/.netlify/functions/summarize-youtube?vID=${videoId}`);
+      const data = await response.json();
+      document.getElementById('summary').innerText = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>
